@@ -1,0 +1,309 @@
+{
+	"aria_widgets": [{
+			"pattern_widget": "Accordion (show/hide)",
+			"url_details": "https://www.w3.org/TR/wai-aria-practices/#accordion",
+			"description": "An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content. Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page.",
+			"checkpoint": [
+				"<Enter> or <Space> expands associated panel. Activating again may collapse, but is not mandatory. Collapsing other panels within the group is also not mandatory.",
+				"Tabbing moves to next focusable element.",
+				"[Optional] If focus is on accordion header, <Down Arrow> moves focus to next accordion header. If focus is on last accordion, can do nothing or move focus to first accordion header.",
+				"[Optional] If focus is on accordion header, <Up Arrow> moves focus to previous accordion header. If focus is on first accordion, can do nothing or move focus to last accordion header.",
+				"[Optional] If focus is on accordion header, <Home> moves focus to first accordion header.",
+				"[Optional] If focus is on accordion header, <End> moves focus to last accordion header."
+			]
+		},
+		{
+			"pattern_widget": "Alert",
+			"url_details": "http://www.w3.org/TR/wai-aria-practices/#alert",
+			"description": "An alert is an element that displays a brief, important message in a way that attracts the user's attention without interrupting the user's task.",
+			"checkpoint": [
+				"No keyboard trap.",
+				"[Optional] May trigger an alert sound."
+			]
+		},
+		{
+			"pattern_widget": "Alert Dialog",
+			"url_details": "http://www.w3.org/TR/wai-aria-practices/#alertdialog",
+			"description": "An alert dialog is a modal dialog that interrupts the user's workflow to communicate an important message and acquire a response.",
+			"checkpoint": [
+				"Has same interactions as \"Dialog (Modal)\" pattern.",
+				"<Esc> closes dialog.",
+				"[Optional] May trigger an alert sound."
+			]
+		},
+		{
+		"pattern_widget": "Breadcrumb",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#breadcrumb",
+		"description": "A breadcrumb trail consists of a list of links to the parent pages of the current page in hierarchical order.",
+		"checkpoint": [
+			"Contained within a navigation landmark region.",
+			"No keyboard interaction."
+		]
+		},
+		{
+		"pattern_widget": "Button (generic)",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#button",
+		"description": "A button is a widget that enables users to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.",
+		"checkpoint": [
+			"If button opens a dialog, common convention is to append ellipsis to label (e.g. \"Save as…\").",
+			"<Enter> or <Space> activates button.",
+			"If dialog opens, focus moves inside dialog. If button closes dialog, focus returns to button that opened the dialog.",
+			"If current context is not dismissed, focus stays on button (e.g. \"Apply\" or \"Recalculate\").",
+			"Button: Menu. Has same interactions as \"Menu Button\" pattern.",
+			"Button: Toggle. Label should not change. If it does, then \"aria-pressed\" attribute is not needed."
+		]
+		},
+		{
+		"pattern_widget": "Carousel (generic)",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#carousel",
+		"description": "A carousel presents a set of items, referred to as slides, by sequentially displaying a subset of one or more slides.",
+		"checkpoint": [
+			"Has same interactions as \"Menu Button\" pattern.",
+			"[Optional] Has control(s) for choosing specific slide.",
+			"If carousel automatically rotates, has button for stopping and restarting rotation.",
+			"Auto-rotation stops when element receives keyboard focus. Only restarts if user explicitly requests to do so.",
+			"Auto-rotation stops when mouse is hovering over carousel. [Optional] Resumes on mouse out.",
+			"<Tab> and <Shift+Tab> move focus through interative elements.",
+			"Activating rotation control, next slide, and previous slide do not move focus.",
+			"If present, rotation control is first element in tab sequence. Should precede rotating content for easy access."
+		]
+		},
+		{
+		"pattern_widget": "Carousel: Tabbed",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#tabbed-carousel-elements",
+		"description": "The structure of a tabbed carousel is the same as a basic carousel except that each slide container has role tabpanel in lieu of group, and it does not have the aria-roledescription property. It has slide picker controls implemented using the tabs pattern.",
+		"checkpoint": [
+			"Has same interactions as \"Tabs\" pattern."
+		]
+		},
+		{
+		"pattern_widget": "Checkbox",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#checkbox",
+		"description": "WAI-ARIA supports two types of checkbox widgets Dual-state and Tri-state",
+		"checkpoint": [
+			"<Space> changes state of checkbox."
+		]
+		},
+		{
+		"pattern_widget": "Combo Box (generic)",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#combobox",
+		"description": "A combobox is a widget made up of the combination of two distinct elements: 1) a single-line textbox, and 2) an associated pop-up element for helping users set the value of the textbox.",
+		"checkpoint": [
+			"Textbox is in tabbing sequence; popup is not."
+		]
+		},
+		{
+		"pattern_widget": "Combo Box: Textbox",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#textbox-keyboard-interaction",
+		"description": "List of checkpoints for a single-line textbox.",
+		"checkpoint": [
+			"[Optional] If popup available, places focus on last focusable element in popup.",
+			"<Esc> dismisses popup if it is visible. [Optional] Clears textbox.",
+			"<Enter> accepts suggestion if autocomplete suggestion is automatically selected by placing cursor at end of textbox.",
+			"[Optional] <Alt+Down Arrow> displays popup without moving focus if popup is available but not displayed.",
+			"[Optional] <Alt+Up Arrow> returns focus to textbox and closes popup if popup contains focus.",
+			"Ensure that JavaScript-captured key events do not interfere with browser-provided text editing functions."
+		]
+		},
+		{
+		"pattern_widget": "Combo Box: Listbox popup",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#listbox-popup-keyboard-interaction",
+		"description": "List of checkpoints for an associated pop-up element for helping users set the value of the textbox.",
+		"checkpoint": [
+			"<Enter> accepts focused option in listbox by closing popup and placing accepted value in textbox with cursor at end of value.",
+			"<Esc> closes popup and returns focus to textbox. [Optional] Clears contents of textbox.",
+			"<Right Arrow> returns focus to textbox without closing popup and moves cursor one character to the right.",
+			"<Left Arrow> returns focus to textbox without closing popup and moves cursor one character to the left.",
+			"Any printable character types the character and returns focus to textbox without closing popup.",
+			"[Optional] <Backspace> deletes character prior to cursor and returns focus to textbox.",
+			"[Optional] <Delete> removes selected state if a suggestion was selected, removes inline autocomplete string if present, and returns focus to textbox.",
+			"<Down Arrow> moves focus to and selects next option. If focus is on last option, returns focus to textbox, or does nothing.",
+			"<Up Arrow> moves focus to and selects previous option. If focus is on first option, returns focus to textbox, or does nothing.",
+			"[Optional] <Home> either moves focus to first option, or returns focus to textbox and places cursor on first character.",
+			"[Optional] <End> either moves focus to last option, or returns focus to textbox and places cursor after last character."
+		]
+		},
+		{
+		"pattern_widget": "Combo Box: Grid popup",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#grid-popup-keyboard-interaction",
+		"description": "",
+		"checkpoint": [
+			"<Esc> closes popup and returns focus to textbox. [Optional] Clears contents of textbox.",
+			"Any printable character types the character and returns focus to textbox without closing popup.",
+			"[Optional] <Backspace> deletes character prior to cursor and returns focus to textbox.",
+			"[Optional] <Delete> removes selected state if a suggestion was selected, removes inline autocomplete string if present, and returns focus to textbox.",
+			"<Right Arrow> moves focus one cell to the right. [Optional] If focus is on right-most cell, focus may move to first cell in next row, returns focus to textbox, or does nothing.",
+			"<Left Arrow> moves focus one cell to the left. [Optional] If focus is on left-most cell, focus may move to last cell in previous row, returns focus to textbox, or does nothing.",
+			"<Down Arrow> moves focus one cell down. If focus is on last row of grid, returns focus to textbox, or does nothing.",
+			"<Up Arrow> moves focus one cell up. If focus is on first row of grid, returns focus to textbox, or does nothing.",
+			"[Optional] <Page Down> moves focus down an author-determined number of rows. If focus is on last row of grid, focus does not move.",
+			"[Optional] <Page Up> moves focus up an author-determined number of rows. If focus is on first row of grid, focus does not move.",
+			"[Optional] <Home> either moves focus to first cell in row, or returns focus to textbox and places cursor on first character. If grid has fewer than 3 cells per row or multiple suggested values per row, focus may move to first cell.",
+			"[Optional] <End> either moves focus to last cell in row, or returns focus to textbox and places cursor after last character. If grid has fewer than 3 cells per row or multiple suggested values per row, focus may move to last cell.",
+			"[Optional] <Ctrl+Home> moves focus to first row.",
+			"[Optional] <Ctrl+End> moves focus to last row."
+
+		]
+		},
+		{
+		"pattern_widget": "Combo Box: Tree popup",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#tree-popup-keyboard-interaction",
+		"description": "",
+		"checkpoint": [
+			"<Esc> closes popup and returns focus to textbox. [Optional] Clears contents of textbox.",
+			"Any printable character types the character and returns focus to textbox without closing popup.",
+			"<Right Arrow>: When focus is on a closed node, open the node. Focus and selection do not move.",
+			"<Right Arrow>: When focus is on an open node, moves focus to first child node and selects it if it is selectable.",
+			"<Right Arrow>: When focus is on an end node, does nothing.",
+			"<Left Arrow>: When focus is on an open node, closes the node.",
+			"<Left Arrow>: When focus is on a child node that is either an end node or closed node, moves focus to its parent node and selects it if it is selectable.",
+			"<Left Arrow>: When focus is on a root node that is either an end node or closed node, does nothing.",
+			"<Down Arrow> moves focus to next node that is focusable without opening or closing a node and selects it if it is selectable.",
+			"<Up Arrow> moves focus to previous node that is focusable without opening or closing a node and selects it if it is selectable.",
+			"<Home> moves focus to first node in tree without opening or closing a node and selects it if it is selectable.",
+			"<End> moves focus to last node in tree without opening or closing a node and selects it if it is selectable."
+		]
+		},
+		{
+		"pattern_widget": "Combo Box: Dialog popup",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#dialog-popup-keyboard-interaction",
+		"description": "",
+		"checkpoint": [
+			"To close popup and return focus to textbox: Perform action in dialog that specifies a value for textbox.",
+			"To close popup and return focus to textbox: Cancel out of dialog, and either returns focus to textbox without changing its value, or returns focus to textbox and clears it.",
+			"Same interactions as \"Dialog (Modal)\" pattern.",
+			"Focus moves into dialog from textbox."
+		]
+		},
+		{
+			"pattern_widget": "Dialog (Modal)",
+			"url_details": "https://www.w3.org/TR/wai-aria-practices/#dialog_modal",
+			"description": "An alert is an element that displays a brief, important message in a way that attracts the user's attention without interrupting the user's task. Dynamically rendered alerts are automatically announced by most screen readers, and in some operating systems, they may trigger an alert sound. It is important to note that, at this time, screen readers do not inform users of alerts that are present on the page before page load completes.",
+			"checkpoint": [
+				"No keyboard trap.",
+				"Background is removed from DOM.",
+				"Focus moves to dialog title.",
+				"< Esc> closes dialog.",
+				"Tabbing order cycles within dialog only.",
+				"Dialog contains close and/or cancel button.",
+				"Focus returns to element that invoked the dialog when it is closed."
+			]
+		},	
+		{
+		"pattern_widget": "Disclosure (show/hide)",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#disclosure",
+		"description": "A disclosure is a button that controls visibility of a section of content.",
+		"checkpoint": [
+			"<Enter> or <Space> activates disclosure control and toggles visibility of content."
+		]
+		},
+		{
+		"pattern_widget": "Feed",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#feed",
+		"description": "A feed is a section of a page that automatically loads new sections of content as the user scrolls. The sections of content in a feed are presented in article elements. So, a feed can be thought of as a dynamic list of articles that often appears to scroll infinitely.",
+		"checkpoint": [
+			"<Page Down> moves focus to next article.",
+			"<Page Up> moves focus to previous article.",
+			"<Ctrl+End> moves focus to first focusable element after the feed.",
+			"<Ctrl+Home> moves focus to first focusable element before the feed.",
+			"For a feed within a feed, <Tab> or <Alt+Page Down> moves focus to first item within nested feed."
+		]
+		},
+		{
+		"pattern_widget": "Grid: Data grid",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#dataGrid",
+		"description": "A grid widget is a container that enables users to navigate the information or interactive elements it contains using directional navigation keys, such as arrow keys, Home, and End. As a generic container widget that offers flexible keyboard navigation, it can serve a wide variety of needs. It can be used for purposes as simple as grouping a collection of checkboxes or navigation links or as complex as creating a full-featured spreadsheet application. A grid can be used to present tabular information that has column titles, row titles, or both. The grid pattern is particularly useful if the tabular information is editable or interactive.",
+		"checkpoint": [
+			"<Right Arrow> moves focus one cell to the right. If focus is on right-most cell, focus does not move.",
+			"<Left Arrow> moves focus one cell to the left. If focus is on left-most cell, focus does not move.",
+			"<Down Arrow> moves focus one cell down. If focus is on bottom cell, focus does not move.",
+			"<Up Arrow> moves focus one cell up. If focus is on top cell, focus does not move.",
+			"<Page Down> moves focus down an author-determined number of rows. If focus is in last row, focus does not move.",
+			"<Page Up> moves focus up an author-determined number of rows. If focus is in first row, focus does not move.",
+			"<Home> moves focus to first cell in the row.",
+			"<End> moves focus to last cell in the row.",
+			"<Ctrl+Home> moves focus to first cell in first row.",
+			"<Ctrl+End> moves focus to last cell in last row."
+		]
+		},
+		{
+		"pattern_widget": "Grid: Layout grid",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#layoutGrid",
+		"description": "The grid pattern can be used to group a set of interactive elements, such as links, buttons, or checkboxes. Since only one element in the entire grid is included in the tab sequence, grouping with a grid can dramatically reduce the number of tab stops on a page.",
+		"checkpoint": [
+			"<Right Arrow> moves focus one cell to the right. [Optional] If focus is on right-most cell, focus may move to first cell in next row. If focus is on last cell in grid, focus does not move.",
+			"<Left Arrow> moves focus one cell to the left. [Optional] If focus is on left-most cell, focus may move to last cell in previous row. If focus is on first cell in grid, focus does not move.",
+			"<Down Arrow> moves focus one cell down. [Optional] If focus is on bottom cell, focus may move to top cell in next column. If focus is on last cell in grid, focus does not move.",
+			"<Up Arrow> moves focus one cell up. If focus is on top cell, focus may move to bottom cell in column in previous column. If focus is on first cell in grid, focus does not move.",
+			"[Optional] <Page Down> moves focus down an author-determined number of rows. If focus is on last row of grid, focus does not move.",
+			"[Optional] <Page Up> moves focus up an author-determined number of rows. If focus is on first row of grid, focus does not move.",
+			"<Home> either moves focus to first cell of current row. [Optional] If grid has a single column or fewer than 3 cells per row, focus may move to first cell in grid.",
+			"<End> either moves focus to last cell of current row. [Optional] If grid has a single column or fewer than 3 cells per row, focus may move to last cell in grid.",
+			"[Optional] <Ctrl+Home> moves focus to first cell in first row.",
+			"[Optional] <Ctrl+End> moves focus to last cell in last row."
+		]
+		},
+		{
+		"pattern_widget": "Link",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#link",
+		"description": "A link widget provides an interactive reference to a resource. The target resource can be either external or local, i.e., either outside or within the current page or application.",
+		"checkpoint": [
+			"<Enter> executes the link and moves focus to link target.",
+			"[Optional] <Shift+F10> opens a context menu."
+		]
+		},
+		{
+		"pattern_widget": "Listbox",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#Listbox",
+		"description": "A listbox widget presents a list of options and allows a user to select one or more of them. A listbox that allows a single option to be chosen is a single-select listbox; one that allows multiple options to be selected is a multi-select listbox.",
+		"checkpoint": [
+			"Listbox (generic). Type-ahead for lists with more than 7 options.",
+			"Listbox single-select: If no option is selected before listbox receives focus, first option receives focus. [Optional] First option may be automatically selected.",
+			"Listbox single-select: If an option is selected before listbox receives focus, focus is set on selected option.",
+			"Listbox single-select: <Down Arrow> moves focus to next option. [Optional] Selection may also move with focus.",
+			"Listbox single-select: <Up Arrow> moves focus to previous option. [Optional] Selection may also move with focus.",
+			"Listbox single-select: [Optional] <Home> moves focus to first option. [Optional] Selection may also move with focus.",
+			"Listbox single-select: [Optional] <End> moves focus to last option. [Optional] Selection may also move with focus.",
+			"Listbox single-select: If no option is selected before listbox receives focus, first option receives focus, and no automatic change in selecteion state.",
+			"Listbox single-select: If one or more options are selected before listbox receives focus, focus is set on first option within selected list of options.",
+			"Listbox single-select: Recommended not to require user to hold a modifier key (e.g. <Shift> or <Ctrl>) while navigating the list.",
+			"If no option is selected before listbox receives focus, first option receives focus, and no automatic change in selecteion state.",
+			"If one or more options are selected before listbox receives focus, focus is set on first option within selected list of options.",
+			"Recommended not to require user to hold a modifier key (e.g. <Shift> or <Ctrl>) while navigating the list."
+		]
+		},
+		{
+		"pattern_widget": "Menu or Menu Bar",
+		"url_details": "http://www.w3.org/TR/wai-aria-practices/#menu",
+		"description": "A menu is a widget that offers a list of choices to the user, such as a set of actions or functions.",
+		"checkpoint": [
+			"When a menubar or menu is opened, focus is placed on first item.",
+			"<Enter> If focus is in a menu, activates the item and closes the menu.",
+			"<Enter> If focus is on a submenu, opens the submenu.",
+			"[optional] <Space> If focus is on an item that has no submenu, activates the item and closes the menu.",
+			"[optional] <Space> If focus is on a menu item with a checkbox, changes checkbox state without closing menu.",
+			"[optional] <Space> If focus is on a menu item with a radio button, selects radio button.",
+			"[optional] <Space> If focus is on a menu item that has a submenu, opens submenu and places focus on first item.",
+			"<Down Arrow> If focus is on an item in a menu bar, opens submenu and places focus on first item.",
+			"<Down Arrow> If focus is in a menu, moves focus to next item. [Optional] Wraps from last to first item.",
+			"<Up Arrow> If focus is in a menu, moves focus to previous item. [Optional] Wraps from first to last item.",
+			"<Up Arrow> [Optional] If focus is on an item in a menu bar, opens submenu and places focus on last item.",
+			"<Right Arrow> If focus is in a menu bar, moves focus to next item. [Optional] Wrap from last to first item.",
+			"<Right Arrow> If focus is in a menu that has a submenu, opens submenu and places focus on first item.",
+			"<Right Arrow> If focus is in a menu with no submenu, closes submenu and any parent menus; moves focus to next menu item in menu bar; or opens submenu without moving focus into submenu, or opens submenu and places focus on first item.",
+			"<Left Arrow> If focus is in a menu bar, moves focus to previous item. [Optional] Wrap from first to last item.",
+			"<Left Arrow> If focus is in a submenu of a menu item, closes submenu and places focus on parent menu item.",
+			"<Left Arrow> If focus is in a submenu of a menu bar, closes submenu; moves focus to previous menu item in menu bar; or opens submenu without moving focus into submenu, or opens submenu and places focus on first item.",
+			"<Home> moves focus to first item in current menu or menu bar if wrapping is not supported.",
+			"<End> moves focus to last item in current menu or menu bar if wrapping is not supported.",
+			"[Optional] Any printable character key moves focus to next menu item in current menu whose label begins that that character.",
+			"<Esc> closes menu that contains focus and returns focus to element or context.",
+			"<Tab> moves focus to next element in tab sequence, and if item that had focus is not in a menu bar, closes its menu and all open parent containers.",
+			"<Shift+Tab> moves focus to previous element in tab sequence, and if item that had focus is not in a menu bar, closes its menu and all open parent containers.",
+			"Disabled menu items are focusable but cannot be activated.",
+			"A separator in a menu is not focusable or interactive."
+		]
+		}
+	
+	]
+}
